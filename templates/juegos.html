@@ -7,8 +7,12 @@
     <!-- A single blog post -->
     <section class="post">
         <header class="post-header">
-            <h2 class="post-title">Lista de artículos</h2>
+            <h2 class="post-title">Buscador de juegos</h2>
         </header>
     </section>
+    <form action="/listajuegos" method="GET">
+        <input type="text" id="buscador" name="buscador" placeholder="Introduce el nombre de un juego..." style="border: 2px solid #e5b3fe; width: 30%;">
+        <button type="submit" style="background-color: #e5b3fe; color: white; border-radius: 10px; border: none; padding: 5px;">Buscar</button>
+      </form>
 </div>
 {% endblock %}
