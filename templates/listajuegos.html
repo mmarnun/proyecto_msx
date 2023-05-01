@@ -9,7 +9,24 @@
         <header class="post-header">
             <h2 class="post-title">Información sobre el juego</h2>
         </header>
-        <h1>{{info}}</h1>
-    </section>
+        <table>
+            <thead>
+              <tr>
+                <th style="padding: 5px;">Nombre</th>
+                <th style="padding: 5px;">Desarrollador</th>
+                <th style="padding: 5px;">Detalles</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for juego in juegos %}
+              <tr>
+                <td style="padding: 5px;">{{ juego['nombre'] }}</td>
+                <td style="padding: 5px;">{{ juego['desarrollador'] }}</td>
+                <td style="padding: 5px;"><a href="/juego/{{ juego['identificador'] }}">Detalles</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+                  </section>
 </div>
 {% endblock %}
