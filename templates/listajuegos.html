@@ -22,11 +22,12 @@
               <tr>
                 <td style="padding: 5px;">{{ juego['nombre'] }}</td>
                 <td style="padding: 5px;">{{ juego['desarrollador'] }}</td>
-                <td style="padding: 5px;"><a href="/juego/{{ juego['identificador'] }}">Detalles</a></td>
+                <td style="padding: 5px;"><a href="/juego/{{ juego['id'] }}">Detalles</a></td>
               </tr>
               {% endfor %}
             </tbody>
           </table>
-                  </section>
+          <a href="/juegos"><img src="../static/img/msx.png" alt="msx_logo" width="252" height="112"></a>
+        </section>
 </div>
 {% endblock %}

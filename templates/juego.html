@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Proyecto MSX - Detalles{% endblock %}
+{% block content %}
+<div class="posts">
+    <h1 class="content-subhead">Detalles del juego</h1>
+
+    <!-- A single blog post -->
+    <section class="post">
+        <header class="post-header">
+            <h2 class="post-title">Detalles sobre el juego</h2>
+        </header>
+        <table>
+          <tbody>
+            <tr>
+              <th>Identificador</th>
+              <td>{{ juego.id }}</td>
+            </tr>
+            {% if juego.nombre %}
+            <tr>
+              <th>Nombre</th>
+              <td>{{ juego.nombre }}</td>
+            </tr>
+            {% endif %}
+            {% if juego.sistema %}
+            <tr>
+              <th>Sistema</th>
+              <td>{{ juego.sistema }}</td>
+            </tr>
+            {% endif %}
+            {% if juego.distribuidor %}
+            <tr>
+              <th>Distribuidor</th>
+              <td>{{ juego.distribuidor }}</td>
+            </tr>
+            {% endif %}
+            {% if juego.desarrollador %}
+            <tr>
+              <th>Desarrollador</th>
+              <td>{{ juego.desarrollador }}</td>
+            </tr>
+            {% endif %}
+            {% if juego.categoria %}
+            <tr>
+              <th>Categoría</th>
+              <td>{{ juego.categoria }}</td>
+            </tr>
+            {% endif %}
+            {% if juego.ano %}
+            <tr>
+              <th>Año</th>
+              <td>{{ juego.ano }}</td>
+            </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+        </div>
+        <a href="/juegos"><img src="../static/img/msx.png" alt="msx_logo" width="252" height="112"></a>
+    </section>
+    
+{% endblock %}
