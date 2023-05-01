@@ -12,14 +12,17 @@ def inicio():
 @app.route('/juegos', methods=['GET', 'POST'])
 def juegos():
     if request.method == 'POST':
-        return redirect(url_for('listajuegos'))
-    return render_template('juegos.html')
+        nombre = request.form.get('buscador', '')
+        juegos = [juego for juego in infojuegos if str(juego['nombre']).lower().startswith(nombre.lower())]
+        return render_template('listajuegos.html', juegos=juegos)
+    else: 
+        return render_template('juegos.html')
 
-@app.route('/listajuegos', methods=['POST'])
-def listajuegos():
-    nombre = request.form.get('buscador', '')
-    juegos = [juego for juego in infojuegos if str(juego['nombre']).lower().startswith(nombre.lower())]
-    return render_template('listajuegos.html', juegos=juegos)
+# @app.route('/listajuegos', methods=['POST'])
+# def listajuegos():
+#     nombre = request.form.get('buscador', '')
+#     juegos = [juego for juego in infojuegos if str(juego['nombre']).lower().startswith(nombre.lower())]
+#     return render_template('listajuegos.html', juegos=juegos)
 
 @app.route('/juego/<int:id>',methods=["GET"])
 def juego(id):
